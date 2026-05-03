@@ -13,29 +13,29 @@
         <div class="flex">
             <input type="text" 
             class="border-2 border-gray-200 m-auto mt-3 w-[90%] p-6 rounded-2xl text-right text-black text-4xl  hover:bg-gray-300" 
-            value="77" id="displey">
+             id="displey">
             
         </div>
-        <div class="grid grid-cols-7 gap-2 w-[90%] m-auto">
+        <div class="grid grid-cols-4 gap-2 w-[90%] m-auto md:grid-cols-7">
             <!-- 1 no row  -->
-         <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator('Deg')">Deg</button>
+         <button class=" bg-red-600 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-red-500" onclick="removeAll()">CE</button>
                 
-        <button class=" bg-gray-700 text-white rounded-2xl m-4  cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator('Red')">Red</button>      
+        <button class=" bg-gray-700 text-white rounded-2xl m-4  cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator()">Red</button>      
   <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator('x!')">x!</button>
                 
         <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator('(')">(</button>    
           <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator(')')">)</button>
                 
         <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4  cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator('%')">%</button>    
-          <button class=" bg-red-500 text-white rounded-2xl p-4 m-4  cursor-pointer text-2xl hover:bg-red-400" onclick="calculator('Del')">Del</button>
+          <button class=" bg-red-500 text-white rounded-2xl p-4 m-4  cursor-pointer text-2xl hover:bg-red-400" onclick="remove()">Del</button>
 
 
 
           <!-- 2 no row  -->
-         <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-600"onclick="calculator('lnv')">lnv</button>
+         <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-600"onclick="calculator('lnv(')">lnv</button>
                 
-        <button class=" bg-gray-700 text-white rounded-2xl m-4  cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator('sin')">sin</button>      
-  <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator('ln')">ln</button>
+        <button class=" bg-gray-700 text-white rounded-2xl m-4  cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator('sin(')">sin</button>      
+  <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator('ln(')">ln</button>
                 
         <button class=" bg-gray-600 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-500"onclick="calculator('7')">7</button>    
           <button class=" bg-gray-600 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-500"onclick="calculator('8')">8</button>
@@ -47,10 +47,10 @@
 
 
           <!-- 3 no row  -->
-         <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-600"onclick="calculator('π')">π</button>
+         <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-600"onclick="calculator(Math.PI.toFixed(4))">π</button>
                 
-        <button class=" bg-gray-700 text-white rounded-2xl m-4  cursor-pointer text-2xl hover:bg-gray-600"onclick="calculator('cos')">cos</button>      
-  <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator('log')">log</button>
+        <button class=" bg-gray-700 text-white rounded-2xl m-4  cursor-pointer text-2xl hover:bg-gray-600"onclick="calculator('cos(')">cos</button>      
+  <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator('log(')">log</button>
                 
         <button class=" bg-gray-600 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-500" onclick="calculator('4')">4</button>    
           <button class=" bg-gray-600 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-500" onclick="calculator('5')">5</button>
@@ -61,10 +61,10 @@
 
                 
            <!-- 4 no row  -->
-         <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator('e')">e</button>
+         <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator(Math.E)">e</button>
                 
-        <button class=" bg-gray-700 text-white rounded-2xl m-4  cursor-pointer text-2xl hover:bg-gray-600"onclick="calculator('tan')">tan</button>      
-  <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator('√')">√</button>
+        <button class=" bg-gray-700 text-white rounded-2xl m-4  cursor-pointer text-2xl hover:bg-gray-600"onclick="calculator('tan(')">tan</button>      
+  <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator('√(')">√</button>
                 
         <button class=" bg-gray-600 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-500" onclick="calculator('1')">1</button>    
           <button class=" bg-gray-600 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-500"onclick="calculator('2')">2</button>
@@ -74,15 +74,15 @@
 
 
             <!-- 5 no row  -->
-         <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator('Ans')">Ans</button>
+         <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator()">Ans</button>
                 
-        <button class=" bg-gray-700 text-white rounded-2xl m-4  cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator('EXP')">EXP</button>      
+        <button class=" bg-gray-700 text-white rounded-2xl m-4  cursor-pointer text-2xl hover:bg-gray-600" onclick="calculator()">EXP</button>      
   <button class=" bg-gray-700 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-600"onclick="calculator('^')"> x<sup>y</sup></button>
                 
         <button class=" bg-gray-600 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-500" onclick="calculator('0')">0</button>    
           <button class=" bg-gray-600 text-white rounded-2xl p-4 m-4 cursor-pointer text-2xl hover:bg-gray-500" onclick="calculator('.')">.</button>
                 
-        <button class=" bg-cyan-700 text-white rounded-2xl p-4 m-4  cursor-pointer text-2xl hover:bg-cyan-500" onclick="calculator('=')">=</button>    
+        <button class=" bg-cyan-700 text-white rounded-2xl p-4 m-4  cursor-pointer text-2xl hover:bg-cyan-500" onclick="result()">=</button>    
           <button class=" bg-cyan-400 text-white rounded-2xl p-4 m-4  cursor-pointer text-2xl hover:bg-cyan-300" onclick="calculator('+')">+</button>
 
 
@@ -91,6 +91,8 @@
 
         </div>
     </div>
+
+  <script src="main.js"></script>
     
 </body>
 </html>
