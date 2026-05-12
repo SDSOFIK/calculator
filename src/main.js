@@ -1,35 +1,74 @@
-let displey = document.getElementById("displey");
+let display = document.getElementById("displey");
+
+
+const replacements = [
+    { from: /x/g, to: '*' },
+    { from: /÷/g, to: '/' },
+    { from: /\^/g, to: '**' },
+    { from: /√\(/g, to: 'Math.sqrt(' },
+    { from: /sin\(/g, to: 'Math.sin(' },
+    { from: /cos\(/g, to: 'Math.cos(' },
+    { from: /tan\(/g, to: 'Math.tan(' },
+    { from: /log\(/g, to: 'Math.log10(' },
+    { from: /lg\(/g, to: 'Math.log(' },
+];
+
 
 function calculator(e){
     
 
-displey.value = displey.value + e;
+displey.value = display.value + e;
 
 
 }
 
 function remove(){
-    displey.value = displey.value.slice(0, -1);
+    displey.value = display.value.slice(0, -1);
 }
 function removeAll() {
-        displey.value = "";
+        display.value = "";
 
 }
 
-function result(){
+function formatExpression(exp) {
 
-    let exp = displey.value
-    exp = exp.replaceAll('x', '*');
-    exp = exp.replaceAll('÷', '/');
-    exp = exp.replaceAll('^', '**');
-    exp = exp.replaceAll('sin(', 'Math.sin(');
-    exp = exp.replaceAll('cos(', 'Math.cos(');
-    exp = exp.replaceAll('√(', 'Math.sqrt(');
-    exp = exp.replaceAll('tan(', 'Math.tan(');
-    exp = exp.replaceAll('tan(', 'Math.tan(');
-    exp = exp.replaceAll('log(', 'Math.log10(');
-    exp = exp.replaceAll('lg(', 'Math.log(');
-    exp = exp.replaceAll('x!', 'factorial($1)');
-    displey.value = eval(exp);
+    let formatted = exp;
+
+    replacements.forEach(rule => {
+
+        formatted = formatted.replace(rule.from, rule.to);
+
+    });
+
+    return formatted;
+
 }
 
+function isSafeExpression(exp) {
+    return /^[0-9+\-*/().!%^√x÷\s]+$/.test(exp) ||
+           /^(sin|cos|tan|log|lg|\d|[+\-*/().!%^√x÷\s])+$/g.test(exp);
+}
+
+
+
+function calculatorResult(){
+    
+
+ try {
+        let exp = display.value;
+
+        if (!isSafeExpression(exp)) {
+            throw new Error("Invalid input");
+        }
+
+        exp = formatExpression(exp);
+
+        const result = Function('"use strict"; return (' + exp + ')')();
+
+        display.value = result;
+    } catch (error) {
+        display.value = "Error";
+    }
+
+
+}
